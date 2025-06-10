@@ -25,9 +25,6 @@ async function copyTextToClipboard(text) {
     console.error('Failed to copy text: ', err);
   }
 }
-
-
-const handleClickCopyClipboard = (e) => {}
     
 
 document.addEventListener("click", (e) => {

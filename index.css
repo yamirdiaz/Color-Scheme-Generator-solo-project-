@@ -1,0 +1,197 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    min-width: 550px;
+    max-width: 850px;
+}
+
+main {
+    width: 100%;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    background-color: #1F2937;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 28px 0;
+    align-items: center;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: 0.5px solid #D1D5DB;
+	width: 60px;
+	height: 45px;
+    background-color: #E5E5E5;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 2px;
+   
+}
+input[type="color"]::-webkit-color-swatch {
+    
+	border: 0.5px solid #313131;
+}
+
+select,
+::picker(select) {
+    appearance: base-select;    
+    border: none;
+    background: none;
+}
+
+#schemes {
+    display: flex;
+    align-items: center;
+    width: 310px; 
+    height: 42px;
+    background-color: inherit;   
+    padding: 0.563em 0.813em;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    
+}
+
+selectedcontent {
+    color: #D5D4D8;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+select option {       
+    background-color: #1F2937;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5em 0.75em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    transition: 0.4s;
+}
+
+select option:hover,
+select option:focus {
+    background: #3D4B60;
+}
+
+select::picker-icon {   
+    content: "\f078"; /* Unicode for Font Awesome heart */
+    font-family: "Font Awesome 6 Free"; /* Ensure correct font */
+    font-weight: 700; /* Needed for solid icons */
+    color: #D5D4D8;
+    font-size: 1.5rem;
+}
+
+option:checked {
+    font-weight: bold;
+}
+
+option::checkmark {
+    content: "\f00c"; /* Unicode for Font Awesome heart */
+    font-family: "Font Awesome 6 Free"; /* Ensure correct font */
+    font-weight: 700; /* Needed for solid icons */
+    color: #5A8DFF;
+    font-size: 1.5rem;
+}
+
+option:last-of-type {
+    border-radius: 0 0 6px 6px;
+}
+
+.btn {
+    width: 123px;
+    height: 43px;
+    border: none;
+    background-color: #3D4B60;
+    color: white;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.color-picker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(70px, 1fr));
+    grid-template-rows: 100vh;
+    gap: 0;
+    
+}
+
+.color {
+    margin: 0;
+}
+
+.color:hover,
+.color:focus {
+    cursor: -webkit-grab;
+}
+
+#color-1 {
+    background-color: #f55a5a;
+}
+
+#color-2 {
+    background-color: #2b283a;
+}
+
+#color-3 {
+    background-color: #fbf3ab;
+}
+
+#color-4 {
+    background-color: #aad1b6;
+}
+
+#color-5 {
+    background-color: #a626d3;
+}
+
+.color-name-section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-width: 550px;
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(70px, 1fr));
+    grid-template-rows: 60px;
+    gap: 0;
+    background-color: #1F2937;
+    color: #D5D4D8;
+    text-align: center;
+    align-items: center;
+    
+}
+
+.color-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0;
+}

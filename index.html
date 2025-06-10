@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+    </head>
+    <body>
+        <main>
+            <section class="header">
+                <form>
+                    <input 
+                        type="color" 
+                        id="input-color" 
+                        value="#f55a5a" >
+                    <select 
+                        id="schemes" 
+                        name="schemes" 
+                        aria-label="Select Element which let you select the scheme that you want to combine your color with.">
+                        <button>
+                            <selectedcontent></selectedcontent>
+                        </button>
+                        <option selected value="monochrome">Monochrome</option>
+                        <option value="monochrome-dark">Monochrome Dark</option>
+                        <option value="monochrome-light">Monochrome Light</option>
+                        <option value="analogic">Analogic</option>
+                        <option value="complement">Complement</option>
+                        <option value="analogic-complement">Analogic Complement</option>
+                        <option value="triad">Triad</option>
+                        <option value="quad">Quad</option>                        
+                    </select>
+                    <button class="btn" id="btn">Get color Scheme</button>
+                </form>
+            </section>
+            <section class="color-picker">
+                <div 
+                    class="color"
+                    id="color-1" 
+                    title="Copy color to the Clipboard"
+                    data-color="#F55A5A" ></div>
+                <div 
+                    class="color" 
+                    id="color-2" 
+                    title="Copy color to the Clipboard"
+                    data-color="#2B283A"></div>
+                <div 
+                    class="color" 
+                    id="color-3" 
+                    title="Copy color to the Clipboard"
+                    data-color="#FBF3AB"></div>
+                <div 
+                    class="color" 
+                    id="color-4" 
+                    title="Copy color to the Clipboard"
+                    data-color="#AAD1B6"></div>
+                <div 
+                    class="color" 
+                    id="color-5" 
+                    title="Copy color to the Clipboard"
+                    data-color="#A626D3"></div>
+            </section>
+            <section class="color-name-section">
+                <p class="color-name" id="color-name-1" >#F55A5A</p>
+                <p class="color-name" id="color-name-2" >#2B283A</p>
+                <p class="color-name" id="color-name-3" >#FBF3AB</p>
+                <p class="color-name" id="color-name-4" >#AAD1B6</p>
+                <p class="color-name" id="color-name-5" >#A626D3</p>
+            </section>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html> 

@@ -16,29 +16,26 @@ const renderColors = (colorsArr) => {
         colorNameElement[index].textContent = colorHex
     })
 }
-
-async function copyTextToClipboard(text) {
-  try {
-    await navigator.clipboard.writeText(text);
-    console.log('Text copied to clipboard');
-  } catch (err) {
-    console.error('Failed to copy text: ', err);
-  }
-}
     
 
 document.addEventListener("click", (e) => {
     if(e.target.id === 'btn') {
-        e.preventDefault()
-        
+        e.preventDefault()        
         const inputColorValue = document.getElementById('input-color').value
         const schemeValue = document.getElementById('schemes').value 
         
         fetch(`https://www.thecolorapi.com/scheme?hex=${convertHexToHexString(inputColorValue)}&mode=${schemeValue}&count=5`)
             .then(res => res.json())
             .then(data => renderColors(data.colors))
+    } else if (e.target.dataset.color | e.target.getAttribute('data-color')) {
+        document.execCommand('copy')      
     }
-    else if (e.target.dataset.color) {
-        copyTextToClipboard(e.target.dataset.color)
-    }
+    
+    
 })
+
+document.addEventListener('copy', function(e){
+  e.clipboardData.setData('text/plain', e.target.dataset.color);
+  console.log("Message Coppies to the clip board")
+  e.preventDefault(); // default behaviour is to copy any selected text
+});
